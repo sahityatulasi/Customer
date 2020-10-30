@@ -18,7 +18,9 @@ public class CustomerService implements ICustomerService{
 	public Customer add(Customer customer) {
 		return dao.register(customer);
 	}
-
+	
+    @Override
+	@Transactional
 	public Customer update(long id,String name) {
 		Customer customer1=dao.findById(id);
 		customer1.setName(name);
